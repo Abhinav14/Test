@@ -1,4 +1,4 @@
-package designpattern.behavioural;
+package designpattern.creational;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
