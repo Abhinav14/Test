@@ -8,7 +8,16 @@ public class MySingleton {
             }
         }
 
-        public static MySingleton getInstance(){}
+        public static MySingleton getInstance(){
+            if(soleInstance == null){
+                synchronized (MySingleton.class){
+                    if(soleInstance == null){
+                        soleInstance = new MySingleton();
+                    }
+                }
+            }
+            return soleInstance;
+        }
 
     }
-}
+
