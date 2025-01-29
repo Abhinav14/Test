@@ -1,4 +1,4 @@
-package designpattern.creational.singleton.factory;
+package designpattern.creational.factory;
 
 public interface NotificationExecutor {
     public void executeNotification();
