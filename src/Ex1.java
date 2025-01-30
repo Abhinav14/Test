@@ -11,12 +11,16 @@ public class Ex1 {
 
         List<Map.Entry<String, String>> ll = new LinkedList<Map.Entry<String, String>>(hMap.entrySet());
 
-        Collections.sort(ll, new Comparator<Map.Entry<String, String>>() {
+        /*Collections.sort(ll, new Comparator<Map.Entry<String, String>>() {
             @Override
             public int compare(Map.Entry<String, String> o1, Map.Entry<String, String> o2) {
                 return (o1.getValue().compareTo(o2.getValue()));
             }
-        });
+        });*/
+
+        Ex1ValueComparator valueComparator = new Ex1ValueComparator();
+
+        Collections.sort(ll, valueComparator);
 
         HashMap<String, String> lHMap = new LinkedHashMap<String, String>();
 
