@@ -7,13 +7,14 @@ import java.util.Map;
 public class CheckAnagram {
     public static void main(String[] args) {
         String str1 = "jkjkkj";
-        String str2 = "ioioioio";
+        String str2 = "kjkjkj";
         char[] chArr1 = str1.toCharArray();
         char[] chArr2 = str2.toCharArray();
         Arrays.sort(chArr1);
         Arrays.sort(chArr2);
         //System.out.println(Arrays.equals(chArr1, chArr2));
-        System.out.println(checkStringsAnagram1(str1, str2));
+        //System.out.println(checkStringsAnagram1(str1, str2));
+        System.out.println(checkStringsAnagram2(str1, str2));
     }
 
     public static boolean checkStringsAnagram1(String s1, String s2){
@@ -46,8 +47,18 @@ public class CheckAnagram {
         }
         for(Character ch : charArr2){
             if (hMap.containsKey(ch)){
-                if(hMap.get(ch)){}
+                hMap.put(ch, hMap.get(ch)-1);
+                if(hMap.get(ch) == 0){
+                    hMap.remove(ch);
+                }
+            }else{
+                return false;
             }
+        }
+        if(hMap.isEmpty()){
+            return true;
+        }else{
+            return false;
         }
     }
 }
