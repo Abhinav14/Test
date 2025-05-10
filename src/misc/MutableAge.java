@@ -8,11 +8,11 @@ public class MutableAge {
     public MutableAge() {
     }
 
-    public MutableAge(int day, int month, int year) {
+    /*public MutableAge(int day, int month, int year) {
         this.day = day;
         this.month = month;
         this.year = year;
-    }
+    }*/
 
     public int getDay() {
         return day;
