@@ -17,9 +17,16 @@ public class BookTester {
         /*Collections.sort(books, new CompareBookByName());
         System.out.println(books);*/
 
+        /*Comparator<Book> byId = Comparator.comparing(Book::getId);
+        Collections.sort(books, byId);
+        System.out.println(books);*/
+
+       /* Comparator<Book> byName = new CompareBookByName();
+        Collections.sort(books, byName);
+        System.out.println(books);*/
+
         Comparator<Book> byId = Comparator.comparing(Book::getId);
         Collections.sort(books, byId);
         System.out.println(books);
-
     }
 }
