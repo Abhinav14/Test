@@ -9,7 +9,7 @@ public class RemoveDuplicateElements {
         List<String> listOfStrings = Arrays.asList("Java", "Python", "C#", "Java", "Kotlin", "Python");
         /*Set<String> uniqueSet = new LinkedHashSet<>(listOfStrings);
         uniqueSet.stream().forEach(x-> System.out.println(x));*/
-        List<String> uniqueList = listOfStrings.stream().distinct().collect(Collectors.toList());
+        List<String> uniqueList = listOfStrings.stream().distinct().toList();
         System.out.println(uniqueList);
     }
 }

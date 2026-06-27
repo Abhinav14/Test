@@ -26,11 +26,39 @@ public class DynamicArray {
     }
 
     public void insert(int index, Object data){
+        if(size>= capacity){
+            grow();
+        }
+        /*if(index <= size){
+            int next = size, previous = size-1;
+            array[next] = array[previous];
+            while(previous > index){
+               array[next] = array[previous];
+               System.out.println("next: "+next+", previous: "+previous+" | array[next] = "+array[next]+", array[previous] = "+array[previous]);
+               next--;
+               previous--;
+            }
+            array[next] = array[previous];
+            array[index] = data;
+            size++;
+        }*/
+        for(int i = size; i > index; i--){
+            array[i] = array[i-1];
+        }
+        array[index] = data;
+        size++;
+
 
     }
 
     public void delete(Object data){
-
+        for(int i = 0; i < size; i++){
+            if(array[i] == data){
+                for (int j = 0; j < size-i-1; j++){
+                    array[i+j] = array[i+j+1];
+                }
+            }
+        }
     }
 
     public int search(Object data){
